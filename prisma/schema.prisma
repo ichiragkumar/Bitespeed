@@ -14,7 +14,7 @@ datasource db {
 model ContactSchema {
 	id                   Int          @id @default(autoincrement())                
   phoneNumber          String?
-  email                String?
+  email                String?      @unique
   linkedId             Int?         // the ID of another Contact linked to this one
   linkPrecedence       String[]     //"secondary"|"primary" // "primary" if it's the first Contact in the link
   createdAt            DateTime?              
